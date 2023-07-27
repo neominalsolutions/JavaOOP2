@@ -1,5 +1,8 @@
 package abstractClasses;
 
+// Yanlış bir modelle nasıl yapılır kısmı
+// o yüzden interfaces klasörü altındaki değerleri kullanalım.
+
 public abstract class CryptoProvider {
 
   public String privateKey; // asimetrik şifreleme algoritmalarını çözülmesini zorlaştırmak amaçlı
