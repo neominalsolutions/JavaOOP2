@@ -14,7 +14,12 @@ public class ShapeApp {
 
     Scanner scanner = new Scanner(System.in);
     System.out.println(
-        "Üçgen, Daire veya Kare den hangisinin alanını hesaplamak istersiniz? Üçgen için Triangle, Circle için Square, Kare için k seçiniz");
+        "Üçgen, Daire veya Kare den hangisinin alanını hesaplamak istersiniz? Üçgen için 100, Circle için 300, Kare için 200 seçiniz");
+
+    System.out.println("Üçgen için 100, Kare için 200 Daire için 300 değeri giriniz");
+    int shapeCode = scanner.nextInt();
+
+    System.out.println("Üçgen için Triangle, Kare için Square ve Daire için Circle değeri giriniz");
     String shapeType = scanner.next();
 
     // Not : String bir değerin string ifadeye eşitliği için javada == ifade
@@ -22,7 +27,7 @@ public class ShapeApp {
     // değer eşitliği bizim için önemli olduğundan dolayı bu durumda
     // equals ile değer olarak eşit mi değil mi kontrolü yapmamız lazım.
 
-    if (shapeType.equals(ShapeTypeEnum.Triangle.toString())) {
+    if (shapeCode == ShapeTypeEnum.Triangle.getValue() || shapeType.equals(ShapeTypeEnum.Triangle.toString())) {
       System.out.println("Taban alan değeri giriniz");
       double base = scanner.nextDouble();
 
@@ -32,7 +37,7 @@ public class ShapeApp {
       Triangle ucgen = new Triangle(base, height);
       double area = ucgen.CalculateArea();
       System.out.println("Üçgenin alanı : " + area);
-    } else if (shapeType.equals(ShapeTypeEnum.Circle.toString())) { // daire
+    } else if (shapeCode == ShapeTypeEnum.Circle.getValue() || shapeType.equals(ShapeTypeEnum.Circle.toString())) { // daire
       System.out.println("yarıçap değeri giriniz");
       double radius = scanner.nextDouble();
 
@@ -40,7 +45,8 @@ public class ShapeApp {
       double area = circle.CalculateArea();
       System.out.println("dairenin alanı : " + area);
 
-    } else if (shapeType.equals(ShapeTypeEnum.Square.toString())) { // kare ise
+    } else if (shapeCode == ShapeTypeEnum.Square.getValue() || shapeType.equals(ShapeTypeEnum.Square.toString())) { // kare
+                                                                                                                    // ise
       System.out.println("Kenar uzunluğu giriniz");
       double width = scanner.nextDouble();
 
@@ -63,6 +69,8 @@ public class ShapeApp {
 
     }
 
+    int value = ShapeTypeEnum.Circle.getValue();
+    System.out.println("value" + value);
 
   }
 }
