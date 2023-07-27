@@ -63,12 +63,6 @@ public class ShapeApp {
 
     }
 
-    int statusCode = OrderStatusEnum.Completed.getValue();
-    System.out.println("status-code" + statusCode);
-
-    // if("".equals("Completed")){
-
-    // }
 
   }
 }
